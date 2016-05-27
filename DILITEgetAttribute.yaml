@@ -1,0 +1,46 @@
+# swagger file for DILITEreasoner
+swagger: '2.0'
+
+# This is your document metadata
+info:
+  version: 1.0.0
+  title: list of DILitereasoner 
+
+# Describe your paths here
+paths:
+  # This is a path endpoint. Change it.
+  /DILITEreasoner:
+    # HTTP operation for DILITEreasoner
+    get:
+      # verb for DILITEreasoner
+      description: |
+        Gets `Atributes` domain.
+      # This is array of GET operation parameters:
+      parameters:
+        # parameter which is needed by DILITEreasoner
+        -
+          name: ConceptId
+          in: query
+          description: identifier of the domain concept
+          required: true
+          type: string
+          format: string
+      # Expected responses for this operation:
+      responses:
+        # Response code
+        200:
+          description: Successful response
+          # A schema describing the response for list of Attributes.
+          schema:
+            title: ArrayOfAttributes
+            type: array
+            items:
+              title: Atribute
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                example:
+                  type: string
